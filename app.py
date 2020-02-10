@@ -17,9 +17,9 @@ def submit():
         return render_template('success.html')
 
         # make sure both customer and dealer input are not empty
-        if customer == '' or dealer == '':
-            return render_template('index.html', message="Please enter required fields")
-        return render_template('success.html')
+    if customer == '' or dealer == '':
+        return render_template('index.html', message="Please enter required fields")
+    return render_template('success.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
