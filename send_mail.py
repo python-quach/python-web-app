@@ -3,6 +3,14 @@ from email.mime.text import MIMEText
 
 
 def send_email(customer, dealer, rating, comments):
+    """[summary]
+
+    Arguments:
+        customer {string} -- [description]
+        dealer {string} -- [description]
+        rating {string} -- [description]
+        comments {string} -- [description]
+    """
     port = 2525
     smtp_server = 'smtp.mailtrap.io'
     login = 'e1c8110fdc14f3'
@@ -20,4 +28,4 @@ def send_email(customer, dealer, rating, comments):
     # Send email
     with smtplib.SMTP(smtp_server, port) as server:
         server.login(login, password)
-        server.send_message(sender_email, reciver_email, msg.as_string())
+        server.sendmail(sender_email, reciver_email, msg.as_string())
